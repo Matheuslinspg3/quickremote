@@ -1,5 +1,5 @@
 // Configuração
-const WORKER_URL = 'wss://quickremote.yourdomain.workers.dev/ws'; // ALTERE para sua URL
+const WORKER_URL = 'wss://quickremote-worker.matheuslinspg.workers.dev/ws';
 
 let ws = null;
 let canvas = null;

@@ -4,8 +4,8 @@ import sharp from 'sharp';
 import robot from 'robotjs';
 import readline from 'readline';
 
-// ALTERE para a URL do seu Cloudflare Worker
-const WORKER_URL = 'wss://quickremote.yourdomain.workers.dev/ws';
+// URL do Cloudflare Worker (backend WebSocket)
+const WORKER_URL = 'wss://quickremote-worker.matheuslinspg.workers.dev/ws';
 
 let ws = null;
 let hostId = null;

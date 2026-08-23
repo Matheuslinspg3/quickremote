@@ -9,11 +9,4 @@ bindings = [
 
 [[migrations]]
 tag = "v1"
-new_classes = ["SessionManager"]
-
-[build]
-command = ""
-
-[[env.production.route]]
-pattern = "quickremote.yourdomain.com/*"
-zone_name = "yourdomain.com"
+new_sqlite_classes = ["SessionManager"]
