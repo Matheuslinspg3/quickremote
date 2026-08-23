@@ -9,6 +9,7 @@
     "client": "node src/client.js",
     "host": "node src/host.js",
     "host-web": "node src/host-web.js",
+    "host-demo": "node src/host-demo.js",
     "start": "node src/index.js",
     "deploy-worker": "wrangler deploy",
     "deploy-web": "wrangler pages deploy web --project-name=quickremote-web",
