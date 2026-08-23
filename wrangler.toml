@@ -1,0 +1,19 @@
+name = "quickremote-worker"
+main = "worker/index.js"
+compatibility_date = "2024-01-01"
+
+[durable_objects]
+bindings = [
+  { name = "SESSIONS", class_name = "SessionManager" }
+]
+
+[[migrations]]
+tag = "v1"
+new_classes = ["SessionManager"]
+
+[build]
+command = ""
+
+[[env.production.route]]
+pattern = "quickremote.yourdomain.com/*"
+zone_name = "yourdomain.com"

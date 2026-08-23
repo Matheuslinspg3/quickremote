@@ -1,0 +1,26 @@
+{
+  "name": "quickremote",
+  "version": "1.0.0",
+  "description": "Sistema de desktop remoto open source rápido e leve",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "server": "node src/server.js",
+    "client": "node src/client.js",
+    "host": "node src/host.js",
+    "host-web": "node src/host-web.js",
+    "start": "node src/index.js",
+    "deploy-worker": "wrangler deploy",
+    "deploy-web": "wrangler pages deploy web --project-name=quickremote-web",
+    "dev-worker": "wrangler dev"
+  },
+  "keywords": ["remote-desktop", "screen-sharing", "remote-control"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^8.16.0",
+    "screenshot-desktop": "^1.15.0",
+    "sharp": "^0.33.2",
+    "robotjs": "^0.6.0"
+  }
+}
