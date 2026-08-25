@@ -1,8 +1,7 @@
 import WebSocket from 'ws';
 import readline from 'readline';
 
-// URL do Cloudflare Worker (backend WebSocket)
-const WORKER_URL = 'wss://quickremote-worker.matheuslinspg.workers.dev/ws';
+const SERVER_URL = process.env.QUICKREMOTE_SERVER || 'ws://localhost:8080/ws';
 
 let ws = null;
 let hostId = null;
@@ -64,7 +63,7 @@ async function startHost() {
   password = await question('Digite uma senha para conexões (ou Enter para sem senha): ');
   console.log('\nConectando ao servidor Cloudflare...\n');
 
-  ws = new WebSocket(WORKER_URL);
+  ws = new WebSocket(SERVER_URL);
 
   ws.on('open', () => {
     console.log('✓ Conectado ao servidor');
@@ -137,7 +136,7 @@ async function startHost() {
 
   ws.on('error', (error) => {
     console.error('Erro de conexão:', error.message);
-    console.log('\nVerifique se você configurou corretamente o WORKER_URL no arquivo.');
+    console.log('\nVerifique a variável de ambiente QUICKREMOTE_SERVER ou o valor padrão SERVER_URL.');
     process.exit(1);
   });
 }

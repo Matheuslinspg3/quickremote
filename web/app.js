@@ -1,5 +1,6 @@
 // Configuração
-const WORKER_URL = 'wss://quickremote-worker.matheuslinspg.workers.dev/ws';
+const WS_PROTOCOL = location.protocol === 'https:' ? 'wss:' : 'ws:';
+const WORKER_URL = `${WS_PROTOCOL}//${location.host}/ws`;
 
 let ws = null;
 let canvas = null;

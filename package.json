@@ -10,7 +10,8 @@
     "host": "node src/host.js",
     "host-web": "node src/host-web.js",
     "host-demo": "node src/host-demo.js",
-    "start": "node src/index.js",
+    "start": "node src/railway-server.js",
+    "railway": "node src/railway-server.js",
     "deploy-worker": "wrangler deploy",
     "deploy-web": "wrangler pages deploy web --project-name=quickremote-web",
     "dev-worker": "wrangler dev"
@@ -19,9 +20,14 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "ws": "^8.16.0",
+    "ws": "^8.16.0"
+  },
+  "optionalDependencies": {
     "screenshot-desktop": "^1.15.0",
     "sharp": "^0.33.2",
     "robotjs": "^0.6.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
